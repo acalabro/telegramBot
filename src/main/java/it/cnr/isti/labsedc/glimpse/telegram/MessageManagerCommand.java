@@ -19,13 +19,23 @@ public class MessageManagerCommand extends AbstractCommand {
 			if (message.getText().compareTo("Ciao") == 0) { 
 			TelegramRequest telegramRequest = TelegramRequestFactory.createSendMessageRequest(
 					message.getChat().getId(),
-					"Che cazzo ridi?",
+					"Faccio cose, vedo gente",
 					true,
 					message.getId(),
 					null);
 			
 			requestHandler.sendRequest(telegramRequest);
-			}	
+			}
+			if (message.getText().compareTo("Ciaone") == 0) { 
+				TelegramRequest telegramRequest = TelegramRequestFactory.createSendMessageRequest(
+						message.getChat().getId(),
+						"Faccio cosone, vedo gentone",
+						true,
+						message.getId(),
+						null);
+				
+				requestHandler.sendRequest(telegramRequest);
+				}
 		} catch (JsonParsingException | TelegramServerException e) {
 			e.printStackTrace();
 		}
